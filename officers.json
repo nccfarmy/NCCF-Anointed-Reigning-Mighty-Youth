@@ -1,0 +1,22 @@
+[
+  {
+    "termLabel": "2026 – 2027",
+    "current": true,
+    "officers": [
+      { "name": "Dom Jeus Ocsit", "position": "Youth President", "note": "Leading the ARM Youth in worship, discipleship, and outreach." },
+      { "name": "Officer Name", "position": "Vice President", "note": "" },
+      { "name": "Officer Name", "position": "Secretary", "note": "" },
+      { "name": "Officer Name", "position": "Treasurer", "note": "" },
+      { "name": "Officer Name", "position": "Auditor", "note": "" },
+      { "name": "Officer Name", "position": "P.R.O.", "note": "" }
+    ]
+  },
+  {
+    "termLabel": "2025 – 2026",
+    "current": false,
+    "officers": [
+      { "name": "Former President", "position": "Youth President", "note": "" },
+      { "name": "Former Officer", "position": "Vice President", "note": "" }
+    ]
+  }
+]
