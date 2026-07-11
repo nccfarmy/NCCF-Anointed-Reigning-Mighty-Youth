@@ -1,10 +1,3 @@
-// ============================================
-// NCCF Anointed Reigning Mighty Youth — main.js
-// Handles: nav toggle, footer year, and rendering
-// content from the /data/*.json files so the team
-// can update the site by editing JSON only.
-// ============================================
-
 document.addEventListener("DOMContentLoaded", () => {
   initNav();
   setFooterYear();
@@ -22,6 +15,12 @@ function initNav() {
   toggle.addEventListener("click", () => {
     const open = links.classList.toggle("open");
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  document.addEventListener("click", (e) => {
+    if (!links.classList.contains("open")) return;
+    if (links.contains(e.target) || toggle.contains(e.target)) return;
+    links.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
   });
 }
 
@@ -42,7 +41,6 @@ function escapeHTML(str) {
   return div.innerHTML;
 }
 
-/* ---------- Weekly Activities ---------- */
 async function renderActivities() {
   const mount = document.getElementById("activities-mount");
   if (!mount) return;
@@ -52,7 +50,6 @@ async function renderActivities() {
       mount.innerHTML = emptyState("No activities posted yet. Check back soon!");
       return;
     }
-    // Newest first by date
     items.sort((a, b) => new Date(b.date) - new Date(a.date));
     mount.innerHTML = items.map(item => `
       <div class="card">
@@ -67,7 +64,6 @@ async function renderActivities() {
   }
 }
 
-/* ---------- Accomplishments ---------- */
 async function renderAccomplishments() {
   const mount = document.getElementById("accomplishments-mount");
   if (!mount) return;
@@ -91,7 +87,6 @@ async function renderAccomplishments() {
   }
 }
 
-/* ---------- The Reigning Line (Officers) ---------- */
 async function renderOfficers() {
   const mount = document.getElementById("officers-mount");
   if (!mount) return;
@@ -101,17 +96,18 @@ async function renderOfficers() {
       mount.innerHTML = emptyState("Officer records will appear here.");
       return;
     }
-    // Sort terms newest first
     terms.sort((a, b) => (b.termLabel || "").localeCompare(a.termLabel || ""));
     mount.innerHTML = terms.map(term => `
       <h3 class="term-heading">${escapeHTML(term.termLabel)}${term.current ? " · Current" : ""}</h3>
       <div class="grid">
         ${term.officers.map(o => `
           <div class="officer-card">
-            <div class="officer-avatar">${escapeHTML(initials(o.name))}</div>
+            ${o.photo
+              ? `<img class="officer-avatar" src="${escapeHTML(o.photo)}" alt="${escapeHTML(o.name)}">`
+              : `<div class="officer-avatar">${escapeHTML(initials(o.name))}</div>`
+            }
             <h3>${escapeHTML(o.name)}</h3>
             <div class="role">${escapeHTML(o.position)}</div>
-            <p>${escapeHTML(o.note || "")}</p>
           </div>
         `).join("")}
       </div>
