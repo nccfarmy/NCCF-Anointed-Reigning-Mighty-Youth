@@ -1,22 +1,43 @@
 [
   {
-    "termLabel": "2026 – 2027",
+    "termLabel": "2024 – 2026",
     "current": true,
     "officers": [
-      { "name": "Dom Jeus Ocsit", "position": "Youth President", "note": "Leading the ARM Youth in worship, discipleship, and outreach." },
-      { "name": "Officer Name", "position": "Vice President", "note": "" },
-      { "name": "Officer Name", "position": "Secretary", "note": "" },
-      { "name": "Officer Name", "position": "Treasurer", "note": "" },
-      { "name": "Officer Name", "position": "Auditor", "note": "" },
-      { "name": "Officer Name", "position": "P.R.O.", "note": "" }
+      { "name": "Ferlyn Joy O. Tiñoso", "position": "Pastor" },
+      { "name": "Janna Ysabell R. Del Mundo", "position": "Adviser" },
+      { "name": "Dom Jeus E. Ocsit", "position": "President" },
+      { "name": "Mhark David B. Saraza", "position": "Vice-President (Internal)" },
+      { "name": "Zoe O. Fuentes", "position": "Vice-President (External)" },
+      { "name": "Myra Myrrh M. Ronsairo", "position": "Secretary" },
+      { "name": "Jornielyn N. Rafallo", "position": "Treasurer" },
+      { "name": "Ma. Micah M. Ronsairo", "position": "Auditor" },
+      { "name": "Benedict C. Sison", "position": "Representative – Looc" },
+      { "name": "Divine Grace E. Peñaredondo", "position": "Representative – Magallanes" },
+      { "name": "Leriza L. Luzano", "position": "Representative – Maragondon" },
+      { "name": "Jaymark O. Riñoza", "position": "Representative – Hulo" },
+      { "name": "Yazzeelyn O. Tiñoso", "position": "Representative – Diliman" },
+      { "name": "Shamyr Ian O. Teodosio", "position": "Representative – Ambuklao" }
     ]
   },
   {
-    "termLabel": "2025 – 2026",
+    "termLabel": "2022 – 2024",
     "current": false,
     "officers": [
-      { "name": "Former President", "position": "Youth President", "note": "" },
-      { "name": "Former Officer", "position": "Vice President", "note": "" }
+      { "name": "Evangelyn Riel", "position": "Pastor" },
+      { "name": "Glydine S. Riel", "position": "Adviser" },
+      { "name": "Mariz A. Sobrepeña", "position": "Assistant Adviser" },
+      { "name": "Janna Ysabell R. Del Mundo", "position": "President" },
+      { "name": "Dom Jeus E. Ocsit", "position": "Vice-President" },
+      { "name": "Maricris A. Sobrepeña", "position": "Secretary" },
+      { "name": "Zoe O. Fuentes", "position": "Treasurer" },
+      { "name": "Myra Myrrh M. Ronsairo", "position": "Auditor" },
+      { "name": "Lierelyn Luzano", "position": "P.R.O." },
+      { "name": "Princess Alcantara", "position": "P.R.O." },
+      { "name": "Emmanuel Riel", "position": "Representative – Looc" },
+      { "name": "Loraine F. Loremia", "position": "Representative – Magallanes" },
+      { "name": "Jhanecelle Mendoza", "position": "Representative – Maragondon" },
+      { "name": "Joyce Dimaala", "position": "Representative – Hulo" },
+      { "name": "Krizsa Del Rosario", "position": "Representative – Diliman" }
     ]
   }
 ]
