@@ -47,7 +47,7 @@ async function renderActivities() {
   const mount = document.getElementById("activities-mount");
   if (!mount) return;
   try {
-    const items = await loadJSON("data/activities.json");
+    const items = await loadJSON("activities.json");
     if (!items.length) {
       mount.innerHTML = emptyState("No activities posted yet. Check back soon!");
       return;
@@ -72,7 +72,7 @@ async function renderAccomplishments() {
   const mount = document.getElementById("accomplishments-mount");
   if (!mount) return;
   try {
-    const items = await loadJSON("data/accomplishments.json");
+    const items = await loadJSON("accomplishments.json");
     if (!items.length) {
       mount.innerHTML = emptyState("Accomplishments will be listed here as they happen.");
       return;
@@ -96,7 +96,7 @@ async function renderOfficers() {
   const mount = document.getElementById("officers-mount");
   if (!mount) return;
   try {
-    const terms = await loadJSON("data/officers.json");
+    const terms = await loadJSON("officers.json");
     if (!terms.length) {
       mount.innerHTML = emptyState("Officer records will appear here.");
       return;
