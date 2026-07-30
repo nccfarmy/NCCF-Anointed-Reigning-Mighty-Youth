@@ -125,10 +125,12 @@ async function renderOfficers() {
         btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
       });
     });
-  } catch (e) {
+ } catch (e) {
     mount.innerHTML = emptyState("Officer records couldn't be loaded right now.");
   }
-  function initials(name) {
+}
+
+function initials(name) {
   return (name || "").split(" ").filter(Boolean).slice(0, 2).map(n => n[0].toUpperCase()).join("");
 }
 
@@ -141,5 +143,4 @@ function formatDate(dateStr) {
 
 function emptyState(msg) {
   return `<div class="empty-state">${escapeHTML(msg)}</div>`;
-}
 }
