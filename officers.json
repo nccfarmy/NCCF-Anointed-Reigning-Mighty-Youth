@@ -1,4 +1,24 @@
 [
+    {
+    "termLabel": "2026 – 2028",
+    "current": false,
+    "officers": [
+      { "name": "Janna Ysabell R. Del Mundo", "position": "Pastor" },
+      { "name": "Dom Jeus E. Ocsit", "position": "Adviser" },
+      { "name": "Myra Myrrh M. Ronsairo", "position": "President" },
+      { "name": "Mhark David B. Saraza", "position": "Vice-President (Internal)" },
+      { "name": "Zoe O. Fuentes", "position": "Vice-President (External)" },  
+      { "name": "Cyril Joy S. Ogot", "position": "Secretary" },
+      { "name": "Jornielyn N. Rafallo", "position": "Treasurer" },
+      { "name": "Gillan Arimuhanan", "position": "Auditor" },
+      { "name": "Benedict C. Sison", "position": "Representative – Looc" },
+      { "name": "Divine Grace E. Peñaredondo", "position": "Representative – Magallanes" },
+      { "name": "Leriza L. Luzano", "position": "Representative – Maragondon" },
+      { "name": "Jhane O. Riñoza", "position": "Representative – Hulo" },
+      { "name": "Sophia Jireh O. Fuentes", "position": "Representative – Diliman" }
+      { "name": "John Calvin D. Cabanes", "position": "Representative – Diliman" }
+    ]
+  }
   {
     "termLabel": "2024 – 2026",
     "current": true,
