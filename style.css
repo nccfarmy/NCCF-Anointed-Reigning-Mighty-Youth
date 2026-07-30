@@ -573,3 +573,22 @@ table.fin-table tfoot td {
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
 }
+
+.event-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease;
+}
+.event-card:hover { transform: translateY(-3px); }
+.event-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+.event-card-body { padding: 22px; }
+.event-card-body h3 { margin-bottom: 8px; }
+.event-card-body p { margin-bottom: 0; font-size: 0.95rem; }
