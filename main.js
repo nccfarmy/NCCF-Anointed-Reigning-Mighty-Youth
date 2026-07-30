@@ -99,8 +99,8 @@ async function renderOfficers() {
     terms.sort((a, b) => (b.termLabel || "").localeCompare(a.termLabel || ""));
     mount.innerHTML = terms.map((term, i) => `
       <button class="term-toggle" aria-expanded="false" aria-controls="term-body-${i}">
-          <span>${escapeHTML(term.termLabel)}${term.current ? " · Current" : ""}</span>
-          <span class="chevron" aria-hidden="true">▾</span>
+        <span>${escapeHTML(term.termLabel)}${term.current ? " · Current" : ""}</span>
+        <span class="chevron" aria-hidden="false">▾</span>
       </button>
       <div class="term-body" id="term-body-${i}">
         <div class="grid">
