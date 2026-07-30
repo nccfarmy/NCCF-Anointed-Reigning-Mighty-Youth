@@ -453,16 +453,40 @@ section { padding: 0 0 72px; }
 }
 .officer-card h3 { margin-bottom: 2px; }
 .officer-card .role { color: var(--gold); font-weight: 600; font-size: 0.85rem; margin-bottom: 10px; }
-.term-heading {
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
+.term-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin: 20px 0 0;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--navy-deep);
   font-weight: 700;
-  margin: 44px 0 18px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
 }
-.term-heading:first-of-type { margin-top: 0; }
+.term-toggle:first-of-type { margin-top: 0; }
+.term-toggle:hover { border-color: var(--gold); }
+.term-toggle .chevron {
+  color: var(--gold);
+  transition: transform 0.25s ease;
+  font-size: 1rem;
+}
+.term-toggle[aria-expanded="true"] .chevron { transform: rotate(180deg); }
 
+.term-body {
+  display: none;
+  padding-top: 20px;
+  margin-bottom: 8px;
+}
+.term-body.open { display: block; }
 /* ---------- Financial report table ---------- */
 .table-wrap {
   overflow-x: auto;
