@@ -128,4 +128,18 @@ async function renderOfficers() {
   } catch (e) {
     mount.innerHTML = emptyState("Officer records couldn't be loaded right now.");
   }
+  function initials(name) {
+  return (name || "").split(" ").filter(Boolean).slice(0, 2).map(n => n[0].toUpperCase()).join("");
+}
+
+function formatDate(dateStr) {
+  if (!dateStr) return "";
+  const d = new Date(dateStr);
+  if (isNaN(d)) return dateStr;
+  return d.toLocaleDateString("en-PH", { year: "numeric", month: "long", day: "numeric" });
+}
+
+function emptyState(msg) {
+  return `<div class="empty-state">${escapeHTML(msg)}</div>`;
+}
 }
