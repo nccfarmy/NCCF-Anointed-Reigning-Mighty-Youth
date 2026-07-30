@@ -97,37 +97,35 @@ async function renderOfficers() {
       return;
     }
     terms.sort((a, b) => (b.termLabel || "").localeCompare(a.termLabel || ""));
-    mount.innerHTML = terms.map(term => `
-      <h3 class="term-heading">${escapeHTML(term.termLabel)}${term.current ? " · Current" : ""}</h3>
-      <div class="grid">
-        ${term.officers.map(o => `
-          <div class="officer-card">
-            ${o.photo
-              ? `<img class="officer-avatar" src="${escapeHTML(o.photo)}" alt="${escapeHTML(o.name)}">`
-              : `<div class="officer-avatar">${escapeHTML(initials(o.name))}</div>`
-            }
-            <h3>${escapeHTML(o.name)}</h3>
-            <div class="role">${escapeHTML(o.position)}</div>
-          </div>
-        `).join("")}
+    mount.innerHTML = terms.map((term, i) => `
+      <button class="term-toggle" aria-expanded="${term.current ? "true" : "false"}" aria-controls="term-body-${i}">
+        <span>${escapeHTML(term.termLabel)}${term.current ? " · Current" : ""}</span>
+        <span class="chevron" aria-hidden="true">▾</span>
+      </button>
+      <div class="term-body${term.current ? " open" : ""}" id="term-body-${i}">
+        <div class="grid">
+          ${term.officers.map(o => `
+            <div class="officer-card">
+              ${o.photo
+                ? `<img class="officer-avatar" src="${escapeHTML(o.photo)}" alt="${escapeHTML(o.name)}">`
+                : `<div class="officer-avatar">${escapeHTML(initials(o.name))}</div>`
+              }
+              <h3>${escapeHTML(o.name)}</h3>
+              <div class="role">${escapeHTML(o.position)}</div>
+            </div>
+          `).join("")}
+        </div>
       </div>
     `).join("");
+
+    mount.querySelectorAll(".term-toggle").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const body = btn.nextElementSibling;
+        const isOpen = body.classList.toggle("open");
+        btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+    });
   } catch (e) {
     mount.innerHTML = emptyState("Officer records couldn't be loaded right now.");
   }
-}
-
-function initials(name) {
-  return (name || "").split(" ").filter(Boolean).slice(0, 2).map(n => n[0].toUpperCase()).join("");
-}
-
-function formatDate(dateStr) {
-  if (!dateStr) return "";
-  const d = new Date(dateStr);
-  if (isNaN(d)) return dateStr;
-  return d.toLocaleDateString("en-PH", { year: "numeric", month: "long", day: "numeric" });
-}
-
-function emptyState(msg) {
-  return `<div class="empty-state">${escapeHTML(msg)}</div>`;
 }
